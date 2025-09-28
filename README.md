@@ -82,11 +82,7 @@ Currently improving my skills in both **frontend & backend development**, while 
 
 ---
 
-## 🐍 Contribution Graph Snake
 
-<p align="center">
-  <img src="https://github.com/robbykusumah/robbykusumah/blob/output/github-contribution-grid-snake.svg" alt="snake gif"/>
-</p>
 
 ---
 
