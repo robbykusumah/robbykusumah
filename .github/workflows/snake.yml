@@ -1,0 +1,36 @@
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # generate daily (optional)
+  workflow_dispatch:      # bisa dijalankan manual dari tab Actions
+  push:
+    branches:
+      - main              # ubah jika default branch-mu bukan 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate snake SVG
+        uses: platane/snk@v3
+        with:
+          github_user_name: robbykusumah
+          outputs: dist/github-contribution-grid-snake.svg
+
+      - name: Commit generated SVG to 'output' branch
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions
+          author_email: github-actions@github.com
+          message: "chore: update snake contribution graph"
+          add: "dist/*"
+          branch: output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
