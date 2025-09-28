@@ -82,6 +82,10 @@ Currently improving my skills in both **frontend & backend development**, while 
 
 ---
 
+### 🐍 Contribution Snake
+
+![GitHub Snake Light](https://github.com/robbykusumah/robbykusumah/blob/output/github-contribution-grid-snake.svg#gh-light-mode-only)
+![GitHub Snake Dark](https://github.com/robbykusumah/robbykusumah/blob/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
 
 
 ---
