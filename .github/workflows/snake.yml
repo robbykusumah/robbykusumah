@@ -2,8 +2,8 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # optional: run daily at 00:00 UTC
-  workflow_dispatch:      # allow manual run from Actions UI
+    - cron: "0 0 * * *"   # Run daily at midnight UTC
+  workflow_dispatch:      # Allow manual trigger from Actions UI
   push:
     branches:
       - main
@@ -13,34 +13,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: true   # make sure GITHUB_TOKEN can push
+          persist-credentials: true   # So GITHUB_TOKEN can push
 
+      # 2️⃣ Generate the Snake SVG
       - name: Generate snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: robbykusumah
           outputs: dist/github-contribution-grid-snake.svg
-          # outputs_path: dist   # optional
 
-      - name: Prepare output branch and move SVG to root
+      # 3️⃣ Push the generated file to output branch
+      - name: Push to output branch
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          # create or reset output branch
+          # Set up Git identity
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          # Fetch and switch to (or create) output branch
           git fetch origin
           git checkout -B output
-          # ensure dist file exists
+
+          # Copy the generated SVG file to the root
           if [ -f dist/github-contribution-grid-snake.svg ]; then
-            mv dist/github-contribution-grid-snake.svg ./github-contribution-grid-snake.svg
+            cp dist/github-contribution-grid-snake.svg github-contribution-grid-snake.svg
+
             git add github-contribution-grid-snake.svg
             git commit -m "chore: update snake contribution graph" || echo "No changes to commit"
+
+            # Push changes to output branch
             git push origin output --force
           else
-            echo "ERROR: dist/github-contribution-grid-snake.svg not found"
+            echo "❌ ERROR: dist/github-contribution-grid-snake.svg not found"
             exit 1
           fi
         env:
