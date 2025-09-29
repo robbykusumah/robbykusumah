@@ -1,5 +1,3 @@
-
-
 <h1 align="center">👋 Hi there, I'm <span style="color:#00BFFF;">Robby Kusumah</span></h1>
 <p align="center">
   🎓 Computer Science Student @ BINUS University <br>
@@ -7,9 +5,15 @@
 </p>
 
 <p align="center">
-  <a href="mailto:muhammad.kusumah001@binus.ac.id"><img src="https://img.shields.io/badge/Email-Contact%20Me-blue?style=flat-square&logo=gmail"></a>
-  <a href="https://www.linkedin.com/in/muhammad-robby-kusumah-ba30b4299/"><img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin"></a>
-  <a href="https://github.com/robbykusumah"><img src="https://img.shields.io/badge/GitHub-robbykusumah-black?style=flat-square&logo=github"></a>
+  <a href="mailto:muhammad.kusumah001@binus.ac.id">
+    <img src="https://img.shields.io/badge/Email-Contact%20Me-blue?style=flat-square&logo=gmail" alt="Email Badge"/>
+  </a>
+  <a href="https://www.linkedin.com/in/muhammad-robby-kusumah-ba30b4299/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin" alt="LinkedIn Badge"/>
+  </a>
+  <a href="https://github.com/robbykusumah">
+    <img src="https://img.shields.io/badge/GitHub-robbykusumah-black?style=flat-square&logo=github" alt="GitHub Badge"/>
+  </a>
 </p>
 
 ---
@@ -82,12 +86,11 @@ Currently improving my skills in both **frontend & backend development**, while 
 
 ---
 
-### 🐍 Contribution Snake
+## 🐍 Contribution Snake
 
-![GitHub Snake Light](https://github.com/robbykusumah/robbykusumah/blob/output/github-contribution-grid-snake.svg#gh-light-mode-only)
-![GitHub Snake Dark](https://github.com/robbykusumah/robbykusumah/blob/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
-
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/robbykusumah/robbykusumah/output/github-contribution-grid-snake.svg" alt="Snake animation"/>
+</p>
 
 ---
 
