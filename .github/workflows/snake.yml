@@ -2,7 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # generate daily
+    - cron: "0 0 * * *"   # Generate once a day at midnight
   workflow_dispatch:
   push:
     branches:
@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - name: Generate snake SVG
-        uses: platane/snk@v3
+        uses: Platane/snk@v3
         with:
           github_user_name: robbykusumah
           outputs: dist/github-contribution-grid-snake.svg
@@ -28,9 +28,9 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git checkout -b output || git checkout output
-          git add dist/*
+          git checkout -B output
+          git add dist/github-contribution-grid-snake.svg
           git commit -m "chore: update snake contribution graph" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} output --force
+          git push origin output --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
