@@ -107,5 +107,3 @@ Currently improving my skills in both **frontend & backend development**, while 
 
 ⭐ *“Keep learning, keep building, keep growing.”*
 
-add snake animation to readme
-
